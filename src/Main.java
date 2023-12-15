@@ -9,12 +9,12 @@ public class Main {
                 bankAccount.withDraw(6000);
                 System.out.println("Остаток на счету: "+bankAccount.getAmount());
             }catch (LimitException limitException){
-                System.out.println(limitException.getMessage()+limitException.getRemainingAmount());
+                double sum = bankAccount.getAmount();
+                bankAccount.withDraw((int) sum);
+                System.out.println("Остаток на счету: "+bankAccount.getAmount());
+                System.out.println(limitException.getMessage()+bankAccount.getAmount());
                 break;
             }
-
-
         }
-
     }
 }

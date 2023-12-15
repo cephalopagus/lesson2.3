@@ -16,8 +16,6 @@ public class BankAccount {
             amount-=sum;
         }
         else {
-            System.out.println("Мы сняли: "+amount+"\nОстаток на счету: "+(amount-amount));
-            amount-=amount;
             throw new LimitException("Не достаточно средств для операции! Текущий счет: ", amount);
         }
     }
